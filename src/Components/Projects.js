@@ -49,7 +49,9 @@ function Projects() {
             <div className="layer">
               <h3>Inventra</h3>
               <p>Inventory Tracking Application for McAsphalt</p>
-              <a href="#"><i className="fas fa-external-link-alt"></i></a>
+              <a href="#projects">
+  <i className="fas fa-external-link-alt"></i>
+</a>
             </div>
           </div>
           <div className="work">
@@ -57,7 +59,9 @@ function Projects() {
             <div className="layer">
               <h3>DermaAI</h3>
               <p>AI model using YOLOv8 & Roboflow to detect melanoma</p>
-              <a href="#"><i className="fas fa-external-link-alt"></i></a>
+              <a href="#projects">
+  <i className="fas fa-external-link-alt"></i>
+</a>
             </div>
           </div>
           <div className="work">
@@ -65,7 +69,9 @@ function Projects() {
             <div className="layer">
               <h3>Hollowspire</h3>
               <p>2D action-packed game made in Unity and C#</p>
-              <a href="#"><i className="fas fa-external-link-alt"></i></a>
+              <a href="#projects">
+  <i className="fas fa-external-link-alt"></i>
+</a>
             </div>
           </div>
         </div>
