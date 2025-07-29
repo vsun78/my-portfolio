@@ -1,4 +1,6 @@
 import FaultyTerminal from './FaultyTerminal';
+// Import Link from react-router-dom to enable client-side navigation without page reload.
+import { Link } from 'react-router-dom';
 
 /**
  * Projects component – compact version for homepage.
@@ -77,7 +79,7 @@ function Projects() {
         </div>
 
         {/* Navigate to full projects page */}
-        <a className="btn" href="/projects-page">See More</a>
+        <Link className="btn" to="/projects-page">See More</Link>
       </div>
     </div>
   );
