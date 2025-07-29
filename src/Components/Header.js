@@ -1,7 +1,10 @@
 // Header.js
 import { useEffect } from 'react';
+import TextType from './TextType';
 
 function Header() {
+
+
   useEffect(() => {
     const canvas = document.getElementById('effect');
     const ctx = canvas.getContext('2d');
@@ -36,6 +39,7 @@ function Header() {
 
     initStars();
     drawStars();
+    
     return () => cancelAnimationFrame(drawStars);
   }, []);
 
@@ -54,9 +58,17 @@ function Header() {
           <i className="fas fa-bars"></i>
         </nav>
 
-        <div className="header-text">
+         <div className="header-text">
           <p>Software Engineer</p>
-          <h1>Hi, I'm <span>Victor Sun</span><br /> from Western University</h1>
+          <h1>
+            <TextType
+              text={["Hi, I'm Victor Sun", "from Western University","Welcome to my website!"]}
+              typingSpeed={75}
+              pauseDuration={1000}
+              showCursor={true}
+              cursorCharacter="|"
+            />
+          </h1>
         </div>
 
         <div className="wrapper">
