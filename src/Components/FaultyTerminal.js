@@ -318,8 +318,13 @@ export default function FaultyTerminal({
     const ctn = containerRef.current;
     if (!ctn) return;
     const rect = ctn.getBoundingClientRect();
-    const x = (e.clientX - rect.left) / rect.width;
-    const y = 1 - (e.clientY - rect.top) / rect.height;
+    // Convert the pointer position into normalized [0,1] coordinates relative to the
+    // terminal container.  Clamp the values so they never exceed the bounds,
+    // preventing the effect from jumping when the cursor leaves the canvas.
+    let x = (e.clientX - rect.left) / rect.width;
+    let y = 1 - (e.clientY - rect.top) / rect.height;
+    x = Math.max(0, Math.min(1, x));
+    y = Math.max(0, Math.min(1, y));
     mouseRef.current = { x, y };
   }, []);
 
@@ -428,12 +433,17 @@ export default function FaultyTerminal({
     rafRef.current = requestAnimationFrame(update);
     ctn.appendChild(gl.canvas);
 
-    if (mouseReact) ctn.addEventListener("mousemove", handleMouseMove);
+    // Listen on the window rather than the canvas so mouse movement is
+    // captured even when hovering over overlapping elements like images or
+    // text.  This prevents the effect from freezing when the pointer is
+    // above other DOM nodes.
+    if (mouseReact) window.addEventListener("mousemove", handleMouseMove);
 
     return () => {
       cancelAnimationFrame(rafRef.current);
       resizeObserver.disconnect();
-      if (mouseReact) ctn.removeEventListener("mousemove", handleMouseMove);
+      // Remove the global mouse listener on cleanup.
+      if (mouseReact) window.removeEventListener("mousemove", handleMouseMove);
       if (gl.canvas.parentElement === ctn) ctn.removeChild(gl.canvas);
       gl.getExtension("WEBGL_lose_context")?.loseContext();
       loadAnimationStartRef.current = 0;
