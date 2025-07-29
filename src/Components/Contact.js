@@ -38,7 +38,7 @@ function Contact() {
               <a href="https://instagram.com/"><i className="fab fa-instagram"></i></a>
               <a href="https://linkedin.com/"><i className="fab fa-linkedin"></i></a>
             </div>
-            <a href="images/VictorResume.pdf" download className="btn btn2">Download Resume</a>
+            <a href="images/VictorResume.pdf" target="_blank" rel="noopener noreferrer" className="btn btn2">View Resume</a>
           </div>
 
           <div className="contact-right">
