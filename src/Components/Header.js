@@ -1,4 +1,3 @@
-// Header.js
 import { useEffect } from 'react';
 import TextType from './TextType';
 

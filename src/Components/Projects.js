@@ -1,15 +1,10 @@
 import FaultyTerminal from './FaultyTerminal';
-// Import Link from react-router-dom to enable client-side navigation without page reload.
 import { Link } from 'react-router-dom';
+import "./Projects.css";
 
-/**
- * Projects component – compact version for homepage.
- * Links to the full projects page when "See More" is clicked.
- */
 function Projects() {
   return (
     <div id="projects" style={{ position: 'relative' }}>
-      {/* Background terminal effect */}
       <div
         style={{
           position: 'absolute',
@@ -45,15 +40,15 @@ function Projects() {
       <div className="container" style={{ position: 'relative', zIndex: 1 }}>
         <h1 className="sub-title">My Work</h1>
         <div className="work-list">
-          {/* Three featured projects only */}
           <div className="work center-image">
             <img src="images/Inventory.png" alt="Project 1" />
             <div className="layer">
               <h3>Inventra</h3>
               <p>Inventory Tracking Application for McAsphalt</p>
-              <a href="#projects">
-  <i className="fas fa-external-link-alt"></i>
-</a>
+              <a href="#projects" className="circle-link">
+              <i className="fas fa-external-link-alt"></i>
+              <img src="images/externallink.png" alt="External Link" className="link-image" />
+            </a>
             </div>
           </div>
           <div className="work">
@@ -78,7 +73,6 @@ function Projects() {
           </div>
         </div>
 
-        {/* Navigate to full projects page */}
         <Link className="btn" to="/projects-page">See More</Link>
       </div>
     </div>

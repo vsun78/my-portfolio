@@ -1,15 +1,5 @@
-// TagSphere.js
-// This component renders a rotating 3D tag cloud inspired by the spinning sphere
-// seen on https://hartmans.ai.  It uses basic trigonometry to position words
-// evenly on a sphere and animates them with a simple rotation.
-
 import { useEffect, useRef } from 'react';
 
-/**
- * A simple 3D tag sphere component. The tags prop should be an array of strings.
- * The sphere rotates continuously around the X and Y axes. Each tag is scaled
- * based on its depth (z position) and fades out slightly when further away.
- */
 export default function TagSphere({ tags, radius = 150 }) {
   const containerRef = useRef(null);
   const tagRefs = useRef([]);

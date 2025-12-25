@@ -1,0 +1,182 @@
+.experience-section {
+  min-height: 100vh;
+  padding: 6rem 2rem;
+  background: linear-gradient(180deg, #1a1f3a 0%, #0a0e27 100%);
+  color: white;
+  position: relative;
+}
+
+.experience-section .section-title {
+  color: white;
+}
+
+.experience-section .section-title::after {
+  content: ' Experience';
+  background: linear-gradient(135deg, #00ff88 0%, #00d9ff 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.experience-timeline {
+  max-width: 900px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.experience-card {
+  margin-bottom: 3rem;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s ease;
+}
+
+.experience-card.animate-in {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.experience-content {
+  flex: 1;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  padding: 2rem;
+  backdrop-filter: blur(10px);
+  transition: all 0.3s ease;
+}
+
+.experience-content:hover {
+  transform: translateY(-5px);
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(0, 255, 136, 0.5);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+}
+
+.experience-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 1rem;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.experience-content h3 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  color: white;
+}
+
+.experience-content h4 {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #00ff88;
+  margin-bottom: 0.5rem;
+}
+
+.experience-location {
+  font-size: 0.95rem;
+  color: rgba(255, 255, 255, 0.6);
+  margin-top: 0.25rem;
+}
+
+.experience-period {
+  padding: 0.5rem 1rem;
+  background: rgba(0, 255, 136, 0.2);
+  border: 1px solid rgba(0, 255, 136, 0.5);
+  border-radius: 20px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #00ff88;
+  white-space: nowrap;
+}
+
+.experience-description {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.8);
+  margin-bottom: 1.5rem;
+}
+
+.experience-achievements {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.experience-achievements li {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.7);
+  padding: 0.5rem 0;
+  padding-left: 1.5rem;
+  position: relative;
+}
+
+.experience-achievements li::before {
+  content: '▹';
+  position: absolute;
+  left: 0;
+  color: #00ff88;
+  font-size: 1.2rem;
+}
+
+.experience-cta {
+  text-align: center;
+  margin-top: 4rem;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s ease 0.6s;
+}
+
+.experience-cta.animate-in {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.experience-cta p {
+  font-size: 1.2rem;
+  color: rgba(255, 255, 255, 0.7);
+  margin-bottom: 1.5rem;
+}
+
+.resume-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 1rem 2rem;
+  background: linear-gradient(135deg, #00ff88 0%, #00d9ff 100%);
+  color: #0a0e27;
+  text-decoration: none;
+  border-radius: 50px;
+  font-size: 1.1rem;
+  font-weight: 700;
+  transition: all 0.3s ease;
+  box-shadow: 0 10px 30px rgba(0, 255, 136, 0.3);
+}
+
+.resume-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 15px 40px rgba(0, 255, 136, 0.5);
+}
+
+.resume-button svg {
+  transition: transform 0.3s ease;
+}
+
+.resume-button:hover svg {
+  transform: translateX(5px);
+}
+
+@media (max-width: 768px) {
+  .experience-header {
+    flex-direction: column;
+  }
+
+  .experience-period {
+    align-self: flex-start;
+  }
+}
+
